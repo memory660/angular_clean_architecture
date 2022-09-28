@@ -8,24 +8,21 @@ import { GetUserProfileUseCase } from 'src/domain/usecases/get-user-profile.usec
 import { UserImplementationRepository } from './repositories/user/user-implementation.repository';
 
 
-const userLoginUseCaseFactory = 
-(userRepo: UserRepository) => new UserLoginUseCase(userRepo);
+const userLoginUseCaseFactory = (userRepo: UserRepository) => new UserLoginUseCase(userRepo);
 export const userLoginUseCaseProvider = {
     provide: UserLoginUseCase,
     useFactory: userLoginUseCaseFactory,
     deps: [UserRepository],
 };
 
-const userRegisterUseCaseFactory = 
-(userRepo: UserRepository) => new UserRegisterUseCase(userRepo);
+const userRegisterUseCaseFactory = (userRepo: UserRepository) => new UserRegisterUseCase(userRepo);
 export const userRegisterUseCaseProvider = {
     provide: UserRegisterUseCase,
     useFactory: userRegisterUseCaseFactory,
     deps: [UserRepository],
 };
 
-const getUserProfileUseCaseFactory = 
-(userRepo: UserRepository) => new GetUserProfileUseCase(userRepo);
+const getUserProfileUseCaseFactory = (userRepo: UserRepository) => new GetUserProfileUseCase(userRepo);
 export const getUserProfileUseCaseProvider = {
     provide: GetUserProfileUseCase,
     useFactory: getUserProfileUseCaseFactory,
